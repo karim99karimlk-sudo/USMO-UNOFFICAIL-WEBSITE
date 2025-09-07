@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USMO History</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="USMO IMG copy/cropped_circle_image.png">
+
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Container */
+    .history-container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Section title */
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #111;
+      border-bottom: 2px solid #111;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    /* Each history block */
+    .history-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    /* Reverse layout for alternating images */
+    .history-item.reverse {
+      flex-direction: row-reverse;
+    }
+
+    /* Text styling */
+    .history-text {
+      flex: 1 1 400px;
+    }
+
+    /* Image styling */
+    .history-image {
+      flex: 1 1 300px;
+    }
+    .history-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    /* Headings inside history */
+    .history-text h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .history-text p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #333;
+      text-align: justify;
+    }
+
+    /* Mobile: stack text above image */
+    @media screen and (max-width: 768px) {
+      .history-item,
+      .history-item.reverse {
+        flex-direction: column;
+        text-align: center;
+      }
+      .history-image {
+        margin-top: 15px;
+      }
+      .history-text {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+<header>
+  <div class="logo">
+    <a href="index.html">USMO</a></div>
+
+  <!-- Hamburger (3 lines) -->
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Centered nav -->
+  <nav id="navMenu">
+    <a href="team.html">Team</a>
+    <a href="history.html">History</a>
+    <a href="standing.html">Standing</a>
+    <a href="schedule.html">Schedule</a>
+  </nav>
+
+  <!-- Right language buttons -->
+  <div class="lang-buttons" id="langMenu">
+    <button>EN</button>
+    <button>FR</button>
+    <button>AR</button>
+  </div>
+</header>
+<main>
+
+  <div class="history-container">
+    <h2 class="section-title">USMO History</h2>
+
+    <div class="history-item">
+      <div class="history-text">
+        <h3>Introduction</h3>
+        <p><strong>Union Sportive Musulmane Oujda</strong> also known by <strong>USMO</strong>,
+    One of the most historic Moroccan clubs .Founded in <strong>1958</strong> in the heart of <strong>Oujda, Morocco.</strong>
+    The club's primary colours are black and white ,
+    The fans nicknamed the team by "The Stork of the East".
+    Currently USMO is playing in the second division <strong>BOTOLA PRO 2</strong>.</p>
+      </div>
+      <div class="history-image">
+        <img src="USMO Black-white.logo.jpeg" alt="USMO Foundation">
+      </div>
+    </div>
+
+    <div class="history-item reverse">
+      <div class="history-text">
+        <h3>How was USMO founded?</h3>
+        <p>The story began when the three friends: <strong>AbdelRahman Belaouchi, Benyounes Mezouari and Boumadien Betmouchent</strong> ,
+     came up with an idea of establishing a club after seeing the vibrant energy of youth in their neighborhood "<strong>CASABLANCA ROAD</strong>".
+     The club's headquarters that time was in the Oulad Mimoun Cafe.</p>
+     <p>
+      At first, they made <strong>Hajj Mimoun Moumen</strong> an honorary president after convincing him,
+    <strong>Mekki Bouchaib</strong> as a talent scout , 
+    <strong>Hajj Elaarbi Ben Lakhder Darfoufi</strong> nicknamed by "<strong>Ba Aroub</strong>" as a coach ,
+    He is considered <span style="text-decoration: underline;">the first team coach for Union</span> .  
+     </p>
+      </div>
+      <figure class="history-image">
+        <img src="USMO IMG copy/USMO TEAM 1958.jpg" alt="USMO first team">
+        <figcaption style="text-align: center;
+        color:#4b4b4b;">USMO’s first team</figcaption>
+      </figure>
+    </div>
+
+    <div class="history-item">
+      <div class="history-text">
+        <h3>USMO Beginnings</h3>
+        <p>The season <strong>62/63</strong> Division 3 USMO 
+          <strong>Qualified</strong> to Division 2 for the first time after
+     winning the last match against <strong>khouribga</strong>.
+    The season after, the team had been <strong>relegated</strong> but they didn't give up , 
+    They worked hard. They united. They became unstoppable that season they didn't lose not even
+    a single match and reterning back again to Division 2 65/66.
+    <strong>Two years later</strong>, specifically in the 68/69 season, the team was so close 
+    from <strong>promotion</strong> to the first professional division ,finished second 
+    in the overall standings of the Northern Division 2 with 51 points, 3 points
+     behind <strong>Salé Association</strong>, which had been promoted . 
+      <span style="text-decoration: underline;">In the same season, the USMO's youth team won <span style="color: rgb(235, 200, 0);">the national championship</span>,
+     ahead of Union Casablanca.</span></p>
+      </div>
+      <figure class="history-image">
+        <img src="USMO IMG copy/WhatsApp Image 2025-09-03 at 11.13.24.jpeg" alt="Ba Aroub">
+        <figcaption style="text-align: center;
+        color:#4b4b4b;">First team coach "Ba Aroub"(1927-2020)</figcaption>
+      </figure>
+    </div>
+
+    <div class="history-item reverse">
+      <div class="history-text">
+        <h3>The Golden Era</h3>
+        <p>In the 1974/75 season, the team was relegated to division 3 for 6 seasons,
+     before returning to the Second Division in 
+     the <strong>1980/81 Season</strong>. In the opinion of all Old fans that the 1980s are considered 
+     <span style="text-decoration: underline;">the golden age of the USMO team</span>. In the 1981/82 season, they reached the historic 
+     play-off for the first professional division against <strong>Ittihad Touarga</strong>. 
+     The team also reached <span style="text-decoration: underline;">the semi-finals of the Throne Cup in 1987</span>, 
+     losing 2-1 to their neighbors, <strong>Renaissance Berkane</strong> in Rabat
+     Stadium Moulay Abdellah.</p>
+      </div>
+      <figure class="history-image">
+        <img src="USMO IMG copy/usmo-1986.jpg" alt="USMO vs rsb">
+        <figcaption style="text-align: center;
+        color:#4b4b4b; font-size: 10px;">USMO VS RSB - THRONE CUP 1987 - Moulay Abdellah Stadium .<br>
+      Standing from right:
+      Ibrahim Elzahwani / Mohamed El idrisi / Ali El Sadiq /
+      Mustafa Mbaraki / Qouider Bahri / Qouider Belahwan. <br>
+      Sitting from right:
+      Mohamed El Shanouf / Mohamed Moussaid / Samir Ramdani /
+      Abdelmoula Bentaher / Azawi Idris.</figcaption>
+      </figure>
+    </div>
+    
+
+    <div class="history-item">
+      <div class="history-text">
+        <h3>The 90's</h3>
+        <p></p>
+      </div>
+      <figure class="history-image">
+        <img src="" alt="">
+        <figcaption style="text-align: center;color:#4b4b4b;">
+          
+        </figcaption>
+      </figure>
+    </div>
+
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">
+    <img src="USMO IMG copy/cropped_circle_image.png" alt="USMO Logo">
+  </div>
+
+  <div class="footer-socials">
+    <a href="https://www.facebook.com/USMOUJDAFOOT" target="_blank">
+      <img src="USMO IMG copy/facebook-round-svgrepo-com.svg" alt="Facebook">
+    </a>
+    <a href="https://www.youtube.com/@usmotv48" target="_blank">
+      <img src="USMO IMG copy/youtube-svgrepo-com.svg" alt="Youtube">
+    </a>
+    <a href="https://www.instagram.com/usmoujda/" target="_blank">
+      <img src="USMO IMG copy/instagram-icon-svgrepo-com (2).svg" alt="Instagram">
+    </a>
+  </div>
+
+  <div class="footer-name">
+    <p>UNION SPORTIVE MUSULMANE OUJDA</p>
+  </div>
+</footer>
+
+  <script>
+  function toggleMenu() {
+    document.getElementById('navMenu').classList.toggle('show');
+    document.getElementById('langMenu').classList.toggle('show');
+    document.getElementById('hamburger').classList.toggle('active');
+  }
+</script>
+</body>
+</html>

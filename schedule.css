@@ -1,0 +1,100 @@
+.schedule-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Title */
+.table-title {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Table base */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+
+/* Table header */
+.schedule-table thead th {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  padding: 12px 10px;
+}
+
+/* Cells */
+.schedule-table th,
+.schedule-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.center-cell {
+  text-align: center;
+}
+
+/* Alternating row colors */
+.schedule-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.schedule-table tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+/* Played / upcoming highlights */
+.schedule-table tbody tr.played td:last-child {
+  font-weight: bold;
+  color: #007700;
+}
+
+.schedule-table tbody tr.upcoming td:last-child {
+  color: #999;
+}
+
+/* Hover effect */
+.schedule-table tbody tr:hover {
+  background-color: #f0f0f0;
+  transition: 0.2s;
+}
+
+/* Responsive font size */
+@media screen and (max-width: 600px) {
+  .schedule-table th, .schedule-table td {
+    padding: 10px 6px;
+    font-size: 0.9rem;
+  }
+}
+/* Table header - prevent wrapping */
+.schedule-table thead th {
+  background-color: #111;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  padding: 12px 10px;
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Responsive: allow horizontal scroll on small screens */
+@media screen and (max-width: 600px) {
+  .schedule-container {
+    overflow-x: auto; /* allow horizontal scroll */
+  }
+  .schedule-table th,
+  .schedule-table td {
+    padding: 8px 6px;
+    font-size: 0.85rem; /* smaller font */
+  }
+}

@@ -1,0 +1,52 @@
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      
+      
+    }
+
+    .table-container {
+      max-width: 800px;   /* keeps table from being too wide */
+      width: 100%;
+          /* space left & right */
+    }
+
+    h2 {
+      text-align: center;
+      margin: 20px 0;
+      font-size:1.8rem ;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      
+    }
+   
+
+    thead {
+      background: linear-gradient(135deg, #6c6c6c, #000000);
+      color: white;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    
+
+    
+    
