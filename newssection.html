@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Players</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#111;
+}
+
+/* SECTION */
+
+.players{
+padding:80px 20px;
+}
+
+/* WRAPPER */
+
+.players-wrapper{
+display:flex;
+gap:30px;
+max-width:1200px;
+margin:auto;
+justify-content:center;
+}
+
+/* CARD */
+
+.player-card{
+background:#fff;
+width:230px;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+text-align:center;
+}
+
+/* IMAGE */
+
+.player-img{
+width:100%;
+height:fit-content;
+object-fit:cover;
+}
+
+
+
+
+/* MOBILE SLIDER */
+
+@media (max-width:768px){
+
+.players-wrapper{
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+justify-content:flex-start;
+}
+
+.player-card{
+min-width:85%;
+scroll-snap-align:center;
+}
+
+.players-wrapper::-webkit-scrollbar{
+display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="players">
+
+<div class="players-wrapper">
+
+<!-- PLAYER 1 -->
+
+<div class="player-card">
+<img class="player-img" src="/USMO IMG/Team/Aberkille.jpg">
+
+</div>
+
+<!-- PLAYER 2 -->
+
+<div class="player-card">
+<img class="player-img" src="/USMO IMG/Team/Azeroual.jpg">
+
+</div>
+
+<!-- PLAYER 3 -->
+
+<div class="player-card">
+<img class="player-img" src="/USMO IMG/Team/Hammoch.jpg">
+</div>
+
+<!-- PLAYER 4 -->
+
+<div class="player-card">
+<img class="player-img" src="/USMO IMG/Team/Hilali.jpg">
+
+</div>
+
+</div>
+</section>
+
+</body>
+</html>

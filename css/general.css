@@ -1,0 +1,219 @@
+body{
+  font-family: 'Tajawal', sans-serif;
+  margin: 0;
+  
+}
+
+.hero{
+ height: 100vh;
+ display: flex;
+ margin-top: -50px;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+}
+.hero img {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+.title ,
+.title1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+ 
+}
+
+@media screen and (max-width: 768px) {
+  .hero img {
+    width: 100%;
+  }
+  .title {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  .title1 {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-top: 1rem;
+  } 
+}
+
+
+/* SECTION */
+
+.matches{
+  background-color: black;
+  padding:60px 20px;
+}
+
+/* WRAPPER */
+
+.cards-wrapper{
+  display:flex;
+  gap:30px;
+  justify-content:center;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* CARD */
+
+.match-card{
+  background:#ffffff;
+  width:350px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* TOP BAR */
+
+.card-top{
+  background:black;
+  color:white;
+  display:flex;
+  justify-content:center;
+  padding:10px 15px;
+  font-weight:bold;
+}
+
+/* CONTENT */
+
+.card-content{
+  padding:30px 20px;
+}
+
+.date{
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.stadium{
+  margin-bottom:25px;
+
+}
+
+/* TEAMS */
+
+.teams{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:25px;
+  z-index: 2;
+}
+
+.team{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  z-index: 2;
+}
+
+.team img{
+  width:55px;
+  margin-bottom:8px;
+  z-index: 2;
+}
+
+.vs{
+  font-size:22px;
+  font-weight:bold;
+}
+
+/* BUTTON */
+
+.cup-img{
+  width: 160px;
+  position: absolute;
+  bottom: 0;
+  left: 40px;
+  filter: grayscale(100%);
+  opacity: 0.2;
+}
+
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+  .cards-wrapper{
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    justify-content:flex-start;
+  }
+
+  .match-card{
+    min-width:85%;
+    scroll-snap-align:center;
+  }
+
+}
+
+
+
+
+/* SECTION */
+
+.players{
+padding:80px 20px;
+}
+
+/* WRAPPER */
+
+.players-wrapper{
+display:flex;
+gap:30px;
+max-width:1200px;
+margin:auto;
+justify-content:center;
+}
+
+/* CARD */
+
+.player-card{
+background:#fff;
+width:330px;
+height: 400px;
+border-radius:10px;
+overflow:hidden;
+
+}
+
+/* IMAGE */
+
+.player-img{
+
+object-fit:contain;
+height: 100%;
+width: 100%;
+border-radius: 10px;
+}
+
+
+
+
+/* MOBILE SLIDER */
+
+@media (max-width:768px){
+
+.players-wrapper{
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+justify-content:flex-start;
+}
+
+.player-card{
+min-width:85%;
+scroll-snap-align:center;
+}
+
+.players-wrapper::-webkit-scrollbar{
+display:none;
+}
+
+}

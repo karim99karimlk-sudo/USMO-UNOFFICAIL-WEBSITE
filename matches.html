@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Arrow Scroll Cards</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background:#c4c4c4; 
+      color:#000000; margin:0;
+      
+     }
+
+    .matches-container {
+      position: relative;
+      width: 100%;
+      background-color: black;
+      padding: 40px 0;
+
+    }
+
+    .viewport {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .track1 {
+      display: flex;
+      transition: transform 0.3s ease;
+      gap: 20px;
+      padding-left: 20px;
+    }
+
+    .card {
+      width: 250px;
+      min-width: 250px;
+      background:#f3f3f3;
+      padding:15px;
+      height: 180px;
+      margin-right:15px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      clip-path: polygon(
+        15% 0,
+        100% 0,
+        100% 85%,
+        85% 100%,
+        0 100%,
+        0 15%
+      );
+
+    }
+    .card img{
+      width: 200px;
+      padding-right: 50px;
+      opacity: 0.3;
+        filter: grayscale(100%);
+
+    }
+    .card-info1{
+      position: absolute;
+    }
+    .match-result{
+      margin-top: 10px;
+      font-size: 24px;
+      font-weight: bold;
+      font-style: italic;
+      line-height: 2.4rem;
+      align-self: center;
+    } 
+    .home-team ,
+    .away-team{
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      font-size: 18px;
+      align-items: center;
+    }
+    .home-team img,
+    .away-team img{
+      width: 50px;
+      height: 50px;
+    }
+    .home-team p,
+    .away-team p{
+      font-size: 20px;
+      font-style: italic;
+      font-weight: bold;
+      padding: 0;
+      margin: 10px;
+    }
+
+    .arrow {
+      position:absolute;
+      top:50%;
+      transform: translateY(-50%);
+      width:40px;
+      height:40px;
+      border:none;
+      cursor:pointer;
+      background:#222;
+      color:white;
+      font-size:20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+
+    }
+    .arrow:disabled {
+      opacity:.4;
+    }
+
+    #prev {
+      background-color: white;
+      right:255px;
+      z-index: 999;
+      color: black;
+      font-weight: bold;
+    }
+    #next {
+      background-color: white;
+      left:200px;
+      z-index: 999;
+      color: black;
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: 768px) {
+      
+      .card {
+        width: 200px;
+        height: 150px;
+        margin-left: 0px;
+      }
+
+
+      .arrow{
+        top: 80%;
+      }
+      #prev {
+       right:50px;
+      }
+      #next {      
+      left:245px;  
+    }
+    
+      
+    }
+    /* HAMBURGER ICON */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: 0.4s;
+  }
+  /* ANIMATION: Hamburger → X */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* MEDIA QUERY: Phones */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .logo{
+      padding-right: 280px;
+    }
+
+    nav {
+      flex: none;
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
+      max-height: 0; /* hidden by default */
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.4s ease;
+    }
+
+    .language-selector{
+      flex: none;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 0; /* hidden by default */
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.4s ease;
+    }
+
+    nav.show, .language-selector.show {
+      max-height: 500px; /* enough space to slide */
+      opacity: 1;
+    }
+
+    nav a, .lang-buttons button {
+      width: 100%;
+      text-align: left;
+    }
+
+    .hamburger {
+      display: flex;
+      position:absolute;
+      top: 20px;
+      right: 20px;
+    }
+  }
+  </style>
+</head>
+<body>
+
+  <div>
+<h2 style="color: white; margin: 0 50px 0 0; font-size: 2rem;">المباريات</h2>
+
+<div class="matches-container">
+  <button class="arrow" id="prev">⟨</button>
+
+  <div class="viewport" id="viewport">
+    <div class="track1" id="track1">
+      
+      
+      <div class="card">
+        <img src="USMO IMG/Icons/botolapro2.svg" alt="">
+        <div class="card-info1">
+          <p> <span style="padding: 4px 8px; background-color: #222; color: white;">الجولة 9</span> <span style="font-weight: bold; color: #383838;">- 25.11.23</span> </p>
+        <div class="home-team">
+          <p>USM OUJDA</p>
+        </div>
+        <div class="away-team">
+          <p>MA TETOUAN</p>
+        </div>
+        </div>
+        
+      </div>
+      <div class="card">
+        <img src="USMO IMG/Icons/botolapro2.svg" alt="">
+        <div class="card-info1">
+          <p> <span style="padding: 4px 8px; background-color: #222; color: white;">الجولة 10</span> <span style="font-weight: bold; color: #383838;">- 29.11.23</span> </p>
+        <div class="home-team">
+          <p>RACING AC</p>
+        </div>
+        <div class="away-team">
+          <p>USM OUJDA</p>
+        </div>
+        </div>
+        
+      </div>
+      <div class="card">
+        <img src="USMO IMG/Icons/botolapro2.svg" alt="">
+        <div class="card-info1">
+          <p> <span style="padding: 4px 8px; background-color: #222; color: white;">الجولة 11</span> <span style="font-weight: bold; color: #383838;">- غير مبرمج بعد</span> </p>
+        <div class="home-team">
+          <p>USM OUJDA</p>
+        </div>
+        <div class="away-team">
+          <p>MC OUJDA</p>
+        </div>
+        </div>
+        
+      </div>
+      <div class="card">
+        <img src="USMO IMG/Icons/botolapro2.svg" alt="">
+        <div class="card-info1">
+          <p> <span style="padding: 4px 8px; background-color: #222; color: white;">الجولة 12</span> <span style="font-weight: bold; color: #383838;">- غير مبرمج بعد</span> </p>
+        <div class="home-team">
+          <p>USB</p>
+        </div>
+        <div class="away-team">
+          <p>USM OUJDA</p>
+        </div>
+        </div>
+        
+      </div>
+      <div class="card">
+        <img src="USMO IMG/Icons/botolapro2.svg" alt="">
+        <div class="card-info1">
+          <p> <span style="padding: 4px 8px; background-color: #222; color: white;">الجولة 13</span> <span style="font-weight: bold; color: #383838;">- غير مبرمج بعد</span> </p>
+        <div class="home-team">
+          <p>USM OUJDA</p>
+        </div>
+        <div class="away-team">
+          <p>JSS</p>
+        </div>
+        </div>
+        
+      </div>
+      
+     
+      
+    </div>
+  </div>
+
+  <button class="arrow" id="next">⟩</button>
+</div>
+  </div>
+
+
+<script>
+  const track1 = document.getElementById('track1');
+  const prevButton = document.getElementById('prev');
+  const nextButton = document.getElementById('next');
+  const viewport = document.getElementById('viewport');
+
+  const cardWidth = 315;
+  let currentPosition = 0;
+
+  function getMaxScroll() {
+    return track1.scrollWidth - viewport.offsetWidth;
+  }
+
+  function updateButtons() {
+    prevButton.disabled = currentPosition === 0;
+    nextButton.disabled = currentPosition >= getMaxScroll();
+  }
+
+  nextButton.addEventListener('click', () => {
+    const max = getMaxScroll();
+    if (currentPosition < max) {
+      currentPosition += cardWidth;
+      if (currentPosition > max) currentPosition = max;
+      track1.style.transform = `translateX(${currentPosition}px)`;
+      updateButtons();
+    }
+  });
+
+  prevButton.addEventListener('click', () => {
+    if (currentPosition > 0) {
+      currentPosition -= cardWidth;
+      if (currentPosition < 0) currentPosition = 0;
+      track1.style.transform = `translateX(${currentPosition}px)`;
+      updateButtons();
+    }
+  });
+
+  // أول تحميل
+  updateButtons();
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+/* Header layout */
+    header {
+      background: #000000;
+      color: #fff;
+      padding: 0.4rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      font-family: 'Tajawal', sans-serif;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+    .brand,
+    .brand img{
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: 30px;
+      width: 50px;
+      font-family: "Oi";
+    }
+    .home{ text-decoration: none; color: white; }
+
+    /* Nav */
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 0.5rem;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a, .dropdown-toggle {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 0.6rem;
+      border-radius: 6px;
+      display: inline-block;
+    }
+    .nav-links a:hover, .dropdown-toggle:hover {
+      background: rgba(255,255,255,0.08);
+    }
+    /* Make dropdown toggle visually identical to links */
+    .dropdown-toggle {
+      background: transparent;
+      border: none;
+      font: inherit;
+      cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+      line-height: 1;
+      display: inline-block;
+    }
+    /* optional small caret that matches text color and spacing */
+    .dropdown-toggle::after {
+      content: "▾";
+      display: inline-block;
+      margin-left: 6px;
+      font-size: 0.85em;
+      opacity: 0.9;
+    }
+
+    /* Dropdown */
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      background: #ffffff;
+      color: #111;
+      min-width: 180px;
+      border-radius: 6px;
+      box-shadow: 0 8px 24px rgba(2,6,23,0.15);
+      overflow: hidden;
+      transform-origin: top;
+      opacity: 0;
+      visibility: hidden;
+      transform: scaleY(0.95);
+      transition: opacity .18s ease, transform .18s ease, visibility .18s;
+      z-index: 30;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 0.6rem 0.9rem;
+      color: inherit;
+      text-decoration: none;
+    }
+    .dropdown-menu a:hover { background: #000000; color: white; }
+
+    .dropdown.open .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: scaleY(1);
+    }
+
+    /* Hamburger (mobile) */
+    .menu-btn {
+      display: none;
+      background: transparent;
+      border: none;
+      color: #fff;
+      padding: .3rem;
+      font-size: 2.2rem;
+    }
+    .nav-background-img{
+      display: none;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 800px) {
+      .menu-btn { display: inline-flex; align-items: center; gap: .4rem; }
+      
+      .nav-background-img, .nav-background-img img{
+        display: block;
+        width: fit-content;
+        position: absolute;
+        top: 110%;
+        right: 60%;
+        transform: rotate(140deg);
+        opacity: 0.2;
+        
+      }
+
+      /* Show as a sliding panel from the right on mobile */
+      .nav-links {
+        text-align: right;
+        align-items: flex-start;
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        flex-direction: column;
+        background: #020024;
+        background: linear-gradient(180deg,rgb(0, 0, 0) 9%, rgba(51, 51, 51, 1) 25%, rgba(255, 255, 255, 1) 80%);
+        padding: 3.5rem 0.75rem 1rem; /* leave space for header */
+        width: 280px;
+        max-width: 85%;
+        box-shadow: -8px 0 24px rgba(2,6,23,0.25);
+        transform: translateX(100%); /* hidden off-screen */
+        transition: transform .25s cubic-bezier(.2,.8,.2,1), opacity .18s ease;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 25;
+      }
+
+      .nav-links a, .dropdown-toggle { padding: .6rem 0.8rem; color: #ffffff; }
+
+      /* When nav is open, slide it in */
+      nav.open .nav-links {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* dropdown inside mobile menu: keep position static */
+      .dropdown-menu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        background: transparent;
+        margin-top: .25rem;
+      }
+      .dropdown .dropdown-menu { display: none; }
+      .dropdown.open .dropdown-menu { display: block; }
+    }
+
+   
