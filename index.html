@@ -1,269 +1,350 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>USMO WEBSITE</title>
-
-  <link rel="shortcut icon" href="USMO IMG/logo/cropped_circle_image.png" type="image/x-icon">
-
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oi&display=swap" rel="stylesheet">
-
+  <title> الموقع غير الرسمي ل الإتحاد الرياضي الإسلامي الوجدي</title>
 
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  <link rel="shortcut icon" href="USMO IMG/logo/cropped_circle_image.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Oi&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <header>
-    <div class="container">
-      <a class="home" href="index.html">
-        <div class="brand">
-          <div class="">الإتحاد</div>
-          <div class="">
-            <img src="USMO IMG/469089604_1057811669478444_776812436921751099_n.jpeg" alt="">
+  <div class="logo">
+   <a href="index.html">الإتحاد</a>
+  </div>
+
+  <nav id="nav">
+    <i class="fa-solid fa-xmark close-menu" id="close-menu"></i>
+    <ul>
+      <li><a class="hover-underline" href="academy.html">المدرسة</a></li>
+      <li><a class="hover-underline" href="history.html">التاريخ</a></li>
+      <li><a class="hover-underline" href="team.html">الفريق</a></li>
+      <li><a class="hover-underline" href="schedule.html">الجدول</a></li>
+      <li><a class="hover-underline" href="standings.html">الترتيب</a></li>
+    </ul>
+  </nav>
+
+  <div class="header-icons">
+    <div class=""></div>
+    <div class=""></div>
+    <div class=""></div>
+    <div class=""></div>
+    <div class=""></div>
+    <div class=""></div>
+    <!-- 🌍 Language -->
+    
+
+    <!-- ☰ Menu -->
+    <i class="fa-solid fa-bars" id="menu-toggle"></i>
+    
+  </div>
+</header>
+
+  
+<main>
+    <div class="img-container" style="margin-bottom: 40px;">
+          <img class="tm-img" src="USMO IMG/usmo-casa.jpg" alt="">
+          <div class="title">أهلاً بكم في الموقع غير الرسمي لـ</div>
+          <div class="title2">الإتحاد الرياضي الإسلامي الوجدي</div>
+    </div>
+
+    <section class="matches">
+      <div class="cards-wrapper">
+        <div class="match-card">
+          <div class="h2">المباراة الأخيرة</div>
+          <div class="card">
+            <div class="date"><strong>الأسبوع 21</strong> - 05/04/26 - 3:00PM</div>
+            <div class="teams">
+              <div class="team1">
+                <img src="USMO IMG/logo/cropped_circle_image.png" alt=""> <br> USMO
+              </div>
+              <div class="result">
+               1 - 1
+              </div>
+              <div class="team2">
+                <img src="USMO IMG/Icons/unknown.team.png" alt=""> <br> CJBG
+              </div>
+            </div>
+            <div class="highlights-link">
+              <a href="https://www.youtube.com/watch?v=H4Emwwroln0" target="_blank">
+                <i class="fa-solid fa-play"></i>
+                ملخص المباراة
+              </a>
+            </div>
           </div>
         </div>
-      </a>
-      
 
-      <nav id="mainNav" aria-label="Main navigation">
-        <button class="menu-btn" id="menuToggle" aria-expanded="false" aria-controls="navLinks">
-          ☰
-        </button>
+        <div class="match-card">
+          <div class="h2">المباراة القادمة</div>
+          <div class="card">
+            <div class="date"><strong>الأسبوع 22</strong> - 00-00-00</div>
+            <div class="teams">
+              <div class="team1">
+                <img src="USMO IMG/logo/cropped_circle_image.png" alt="">
+              </div>
+              <div class="result">
+                VS
+              </div>
+              <div class="team2">
+                <img src="USMO IMG/Icons/unknown.team.png" alt="">
+              </div>
+            </div>
+            <div class=""></div>
+          </div>
+        </div>
+      </div>
+        <a href="schedule.html" class="full-link">الجدول الكامل</a>
+    </section>
 
-        <ul class="nav-links" id="navLinks" role="menubar">
-          <li class="dropdown" role="none">
-            <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">التاريخ</button>
-             <div class="dropdown-menu" role="menu" aria-label="Services">
-               <a role="menuitem" href="#web">من 1958 الى 1968</a>
-               <a role="menuitem" href="#seo">من 1969 الى 1978</a>
-               <a role="menuitem" href="#hosting">من 1979 الى 1988</a>
-               <a role="menuitem" href="#hosting">من 1989 الى 1998</a>
-               <a role="menuitem" href="#hosting">من 1999 الى 2008</a>
-               <a role="menuitem" href="#hosting">من 2009 الى 2018</a>
-               <a role="menuitem" href="#hosting">من 2019 الى اليوم </a>
-             </div>
-           </li>
-           <li class="dropdown" role="none">
-            <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">المكتب المسير</button>
-             <div class="dropdown-menu" role="menu" aria-label="Services">
-               <a role="menuitem" href="#web">الرئيس</a>
-               <a role="menuitem" href="#seo">اللجان</a>
-               <a role="menuitem" href="#hosting">الناطق الرسمي</a>
-               <a role="menuitem" href="#hosting">المنخرطين</a>
-               <a role="menuitem" href="#hosting">القانون الأساسي للنادي</a>
-             </div>
-           </li>
-           <li class="dropdown" role="none">
-            <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">الشركة الرياضية</button>
-             <div class="dropdown-menu" role="menu" aria-label="Services">
-               <a role="menuitem" href="#web">المساهمين</a>
-               <a role="menuitem" href="#seo">الرئيس المدير العام</a>
-             </div>
-           </li>
-           <li class="dropdown" role="none">
-            <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">كرة القدم المتنوعة</button>
-             <div class="dropdown-menu" role="menu" aria-label="Services">
-               <a role="menuitem" href="#web">كرة القدم داخل القاعة</a>
-               <a role="menuitem" href="#seo">كرة القدم الشاطئية</a>
-             </div>
-           </li>
-           <li role="none"><a role="menuitem" href="schedule.html">الأخبار</a></li>
-           <li class="dropdown" role="none" >
-            <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">النادي</button>
-             <div class="dropdown-menu" role="menu" aria-label="Services">
-               <a role="menuitem" href="#web">الفريق الأول</a>
-               <a role="menuitem" href="#seo">الفريق النسوي</a>
-               <a role="menuitem" href="#seo">مدرسة النادي </a>
-               <a role="menuitem" href="#seo">الفئات الصغرى</a>
-             </div>
-           </li>
+    <section class="standings">
+  <h2>الترتيب</h2>
 
-           <li role="none"><a role="menuitem" href="#contact">للتواصل معنا</a></li>
-
-           <div class="nav-background-img">
-            <img src="USMO IMG/stork.png" alt="">
-           </div>
-
-        </ul>
-        
-      </nav>
-      
-
+  <div class="table">
+    <div class="table-header">
+      <span>#</span>
+      <span class="team">الفريق</span>
+      <span>ل</span>
+      <span>ف</span>
+      <span>ت</span>
+      <span>خ</span>
+      <span>ل</span>
+      <span>ع</span>
+      <span>-/+</span>
+      <span>النقاط</span>
     </div>
-  </header>
-  <main>
-   <div class="hero">
-    <div>
-      <img src="USMO IMG/logo/cropped_circle_image.png" alt="">
-    </div>
-    <div>
-     <span class="title">
-       الموقع الرسمي لنادي    
-     </span>
-    </div>
-    <div>
-      <span class="title1">
-       الإتحاد الرياضي الإسلامي الوجدي     
-      </span>
-    </div>
-   </div>
 
-  <section class="matches">
-
-<div class="cards-wrapper">
-
-<!-- CARD 1 -->
-
-<div class="match-card">
-
-<div class="card-top">
-<span>Botola Pro 2</span>
-</div>
-
-<div class="card-content">
-
-<div class="date">Sat, Mar 14, 2026, 3:00 PM</div>
-<div class="stadium">Municipal Stadium, Oujda</div>
-
-<div class="teams">
-
-<div class="team">
-<img src="/USMO IMG/logo/cropped_circle_image.png">
-<span>USMO</span>
-</div>
-
-<div class="vs">VS</div>
-
-<div class="team">
-<img src="/USMO IMG/Icons/unknown.team.png">
-<span>FCO</span>
-</div>
-
-</div>
-
-<div class="cup-img">
-  <img src="/USMO IMG/Icons/botolapro2.svg" alt="">
-</div>
-
-</div>
-</div>
-
-
-<div class="match-card">
-
-<div class="card-top">
-<span>Botola Pro 2</span>
-</div>
-
-<div class="card-content">
-
-<div class="date">Sat, Mar 14, 2026, 3:00 PM</div>
-<div class="stadium">Municipal Stadium, Oujda</div>
-
-<div class="teams">
-
-<div class="team">
-<img src="/USMO IMG/logo/cropped_circle_image.png">
-<span>USMO</span>
-</div>
-
-<div class="vs">VS</div>
-
-<div class="team">
-<img src="/USMO IMG/Icons/unknown.team.png">
-<span>FCO</span>
-</div>
-
-</div>
-
-<div class="cup-img">
-  <img src="/USMO IMG/Icons/botolapro2.svg" alt="">
-</div>
-
-</div>
-</div>
-
-
-<div class="match-card">
-
-<div class="card-top">
-<span>Botola Pro 2</span>
-</div>
-
-<div class="card-content">
-
-<div class="date">Sat, Mar 14, 2026, 3:00 PM</div>
-<div class="stadium">Municipal Stadium, Oujda</div>
-
-<div class="teams">
-
-<div class="team">
-<img src="/USMO IMG/logo/cropped_circle_image.png">
-<span>USMO</span>
-</div>
-
-<div class="vs">VS</div>
-
-<div class="team">
-<img src="/USMO IMG/Icons/unknown.team.png">
-<span>FCO</span>
-</div>
-
-</div>
-
-<div class="cup-img">
-  <img src="/USMO IMG/Icons/botolapro2.svg" alt="">
-</div>
-
-</div>
-</div>
-
-</div>
-</section>
    
-<section class="players">
+    
 
-<div class="players-wrapper">
+    
+    <div class="table-row">
+      <span>10</span>
+      <span class="team">USB</span>
+      <span>21</span>
+      <span>5</span>
+      <span>10</span>
+      <span>6</span>
+      <span>17</span>
+      <span>15</span>
+      <span>+2</span>
+      <span>25</span>
+    </div>
 
-<!-- PLAYER 1 -->
+    <div class="table-row active">
+      <span>11</span>
+      <span class="team">USMO</span>
+      <span>21</span>
+      <span>5</span>
+      <span>9</span>
+      <span>7</span>
+      <span>21</span>
+      <span>21</span>
+      <span>0</span>
+      <span>24</span>
+    </div>
+    
+    <div class="table-row">
+      <span>12</span>
+      <span class="team">KAC</span>
+      <span>21</span>
+      <span>5</span>
+      <span>9</span>
+      <span>7</span>
+      <span>21</span>
+      <span>23</span>
+      <span>-2</span>
+      <span>24</span>
+    </div>
 
-<div class="player-card">
-<img class="player-img" src="/USMO IMG/Team/Aberkille.jpg">
+    <div class="table-row">
+      <span>13</span>
+      <span class="team">SM</span>
+      <span>21</span>
+      <span>5</span>
+      <span>8</span>
+      <span>8</span>
+      <span>16</span>
+      <span>2</span>
+      <span>-4</span>
+      <span>23</span>
+    </div>
+  </div>
 
-</div>
-
-<!-- PLAYER 2 -->
-
-<div class="player-card">
-<img class="player-img" src="/USMO IMG/Team/Azeroual.jpg">
-
-</div>
-
-<!-- PLAYER 3 -->
-
-<div class="player-card">
-<img class="player-img" src="/USMO IMG/Team/Hammoch.jpg">
-</div>
-
-<!-- PLAYER 4 -->
-
-<div class="player-card">
-<img class="player-img" src="/USMO IMG/Team/Hilali.jpg">
-
-</div>
-
-</div>
+  <a href="standings.html" class="full-link">الترتيب كامل</a>
 </section>
+
+<section class="squad">
+  <h2> الفريق الأول</h2>
+
+  <div class="players-wrapper">
+    <div class="player-card">
+      <img src="USMO IMG/Team/Badr mahdoub.jpg">
+    </div>
+
+    <div class="player-card">
+      <img src="USMO IMG/Team/Hammoch.jpg">
+    </div>
+
+    <div class="player-card">
+      <img src="USMO IMG/Team/Oussama dahr.jpg">
+    </div>
+
+    <div class="player-card">
+      <img src="USMO IMG/Team/Zouhir Jbilo.jpg">
+    </div>
+  </div>
+
+  
+    <a href="team.html" class="full-link">الفريق كامل</a>
+
+</section>
+
+<section class="history">
+  <h2>التاريخ</h2>
+  <p>
+    <strong>الاتحاد الرياضي الإسلامي الوجدي</strong>، المعروف أيضًا باسم <strong>USMO</strong>، هو أحد أقدم الأندية المغربية. تأسس سنة 1958 في قلب مدينة وجدة بالمغرب.
+ألوان النادي هي الأسود والأبيض، ويُلقب الفريق بـ"لقلق الشرق" من طرف جماهيره.
+يلعب الفريق حاليًا في القسم الثاني من البطولة المغربية الاحترافية، BOTOLA PRO 2.
+
+  </p>
+
+  <p>يلعب النادي المباريات التي هي على أرضه في الملعب البلدي، المعروف أيضًا باسم "الملعب القديم"، والذي يتسع لحوالي 7000 متفرج.
+وقد شهد هذا الملعب لحظات تاريخية للنادي، بما في ذلك انتصارات لا تُنسى ومباريات حاسمة.
+  </p>
+
+    <p>أنتجت مدرسة النادي العديد من الأسماء البارزة في كرة القدم على الصعيدين الوطني والدولي. وعلى مرّ السنوات، بنى النادي سمعة قوية في تطوير المواهب الشابة وتكوين لاعبين محترفين للمستقبل. 
+  </p>
+    <a href="history.html" class="full-link">التاريخ كامل</a>
+
+</section>
+
   </main>
-<script src="js/header.js"></script>
+<footer>
+  <div class="players-container">
+    
+    <div class="keepers">
+      <h2>حراس المرمى</h2>
+      <p><strong>عبدالله</strong> أمغار</p>
+      <p><strong>حمزة</strong> العشاوي</p>
+      <p><strong>أمين</strong> غنيمي</p>
+      <p><strong>صلاح الدين</strong> كعواشي</p>
+    </div>
+
+    <div class="defenders">
+      <h2>المدافعين</h2>
+      <p><strong>زكاريا</strong> مارتيل</p>
+      <p><strong>ياسين</strong> بوعالي</p>
+      <p><strong>عبدالحي</strong> توحين</p>
+      <p><strong>عبدالكريم</strong> أعليون</p>
+      <p><strong>حكيم</strong> أكليدو</p>
+      <p><strong>پاكوم</strong> مالديني</p>
+    </div>
+
+    <div class="center">
+      <h2>الوسط</h2>
+      <p><strong>محمد</strong> حموش</p>
+      <p><strong>زوهير</strong> جبيلو</p>
+      <p><strong>حمزة</strong> البارودي</p>
+      <p><strong>بلال</strong> نفاعي</p>
+      <p><strong>سعيد</strong> أزروال</p>
+      <p><strong>أوسامة</strong> دهر</p>
+      <p><strong>يونس</strong> دويب</p>
+    </div>
+
+    <div class="forwards">
+      <h2>المهاجمين</h2>
+      <p><strong>بدر</strong> مهدوب</p>
+      <p><strong>المعتصم بالله</strong></p>
+      <p><strong>طه</strong> ضيف</p>
+      <p><strong>ياسين</strong> مرزوڭي</p>
+      <p><strong>أسامة</strong> الصغيري</p>
+      <p><strong>حمزة</strong> قرقور</p>
+    </div>
+
+  </div>
+
+  <div class="ft-logo">
+    <img src="USMO IMG/logo/cropped_circle_image.png" alt="USMO Logo">
+  </div>
+
+  <div class="ft-title">
+    الإتحاد الرياضي الإسلامي الوجدي
+
+  </div>
+
+  <div class="web-info">
+    <p>
+تم إنشاء هذا الموقع وإدارته من طرف أحد مشجعي الاتحاد. ولا تربطه أي علاقة بالجمعية أو شركة <strong>USMO</strong>.
+    </p>
+    <p>-------</p>
+    <p>
+شكرًا لـ <a class="fb-link" href="https://www.facebook.com/oujda.watanya/">وجدة الوطنية</a>، التي ساهمت في إنشاء هذا الموقع من خلال توفير المعلومات.    </p>
+
+    <p>
+      إذا كانت لديك أي تعليقات أو طلبات أو اقتراحات، أو إذا كنت ترغب في المساهمة في الموقع، فلا تتردد في التواصل معي عبر البريد الإلكتروني: <a class="fb-link" href="mailto:karim99karimlk@gmail.com">اضغط هنا</a>.
+    </p>
+  </div>
+</footer> 
+
+  <script>
+  
+  const menuToggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav");
+
+
+
+  // ☰ MENU CLICK
+  menuToggle.onclick = (e) => {
+    e.stopPropagation();
+    nav.classList.toggle("active");
+  };
+
+
+  // CLICK OUTSIDE CLOSES EVERYTHING
+  document.onclick = () => {
+    nav.classList.remove("active");
+    langMenu.classList.remove("active");
+  };
+
+  const closeMenu = document.getElementById("close-menu");
+
+// OPEN
+menuToggle.onclick = (e) => {
+  e.stopPropagation();
+  nav.classList.add("active");
+  langMenu.classList.remove("active");
+};
+
+// CLOSE with X
+closeMenu.onclick = (e) => {
+  e.stopPropagation();
+  nav.classList.remove("active");
+};
+
+
+// CLICK OUTSIDE
+document.onclick = (e) => {
+  if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+    nav.classList.remove("active");
+  }
+
+  if (!langBtn.contains(e.target)) {
+    langMenu.classList.remove("active");
+  }
+};
+  </script>
+
 </body>
 </html>

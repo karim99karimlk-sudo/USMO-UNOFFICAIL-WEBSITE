@@ -1,0 +1,106 @@
+
+/* Footer */
+footer {
+  background: linear-gradient(to top, #202020, #000000);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 15px;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Players container */
+.players-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Sections */
+.keepers,
+.defenders,
+.center,
+.forwards {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Titles */
+.players-container h2 {
+  font-family: 'Aref Ruqaa', sans-serif;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  border-bottom: 2px solid white;
+  padding-bottom: 5px;
+}
+
+/* Players */
+.players-container p {
+  margin: 4px 0;
+  font-size: 14px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover */
+.players-container p:hover {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* Logo */
+.ft-logo img {
+  margin-top: 70px;
+  width: 200px;
+}
+
+
+
+/* Club name */
+.ft-title {
+  font-family: "Aref Ruqaa", serif;
+  margin-top: 10px;
+  font-size: 3rem; 
+}
+
+.web-info{
+  color: oklab(83.902% 0 -0.0001);
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 20px;
+  text-align: center;
+}
+.web-info p{
+  margin: 10px;
+}
+
+.fb-link {
+  color: oklab(83.902% 0 -0.0001);
+  text-decoration: underline;
+  font-weight: bold;
+}
+/* Mobile */
+@media (max-width: 768px) {
+  .players-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .players-container h2 {
+    font-size: 18px;
+  }
+
+  .players-container p {
+    font-size: 13px;
+  }
+
+  .ft-title{
+  font-size: 1.4rem;
+  
+}
+}

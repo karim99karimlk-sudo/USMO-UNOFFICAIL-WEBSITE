@@ -1,0 +1,265 @@
+body{
+  margin: 0;
+  padding: 0;
+
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+
+
+.img-container {
+  position: relative;
+  width: 1200px;
+  height: 500px;
+  margin: 0 auto;
+  background-color: black; 
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%; /* how much you want faded*/ 
+  background: linear-gradient(to bottom, transparent, rgb(0, 0, 0)); /* or match page bg*/ 
+  border-radius: 0 0 10px 10px;
+}
+.tm-img{
+  object-fit: cover;
+  width: 100%;
+  height: 500px;
+  border-radius: 0 0 20px 20px;
+}
+
+
+.title{
+    position: absolute;
+    bottom: 15%;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+    font-size: 1.6rem;
+    padding: 6px 32px;
+    border-radius: 22px;
+    background-color: white;
+    z-index: 3;
+
+}
+.title2{
+    position: absolute;
+    bottom: 2%;
+    color: white;
+    font-family: "Aref Ruqaa", serif;
+    font-size: 3rem;
+    z-index: 3;
+
+}
+
+
+ @media (max-width: 1024px) {
+    .img-container {
+     width: 100%;
+     height: 500px; 
+     border-radius: 0;
+    }
+    
+    .tm-img{
+     width: 100%;
+     height: 500px;
+     border-radius: 0;
+    }
+    .img-container::after {
+     border-radius: 0;
+    }
+
+    .title {
+      font-size: 24px; /* smaller for tablets/phones */
+    }
+    .title2 {
+      font-size: 2rem; /* smaller for tablets/phones */
+      
+  }}
+
+ @media (max-width: 906px) {
+
+     .img-container {
+    width: 100%;
+    height: 450px; 
+    border-radius: 0;
+
+}
+    .tm-img{
+  width: 100%;
+  height: 450px;
+  border-radius: 0;
+}
+.img-container::after {
+  
+  border-radius: 0;
+}
+    .title {
+      font-size: 18px; /* smaller for tablets/phones */
+      padding: 4px 20px;
+    }
+    .title2 {
+      font-size: 2rem; /* smaller for tablets/phones */
+  }}
+
+ @media (max-width: 768px) {
+    .img-container {
+     width: 100%;
+     height: 450px; 
+     border-radius: 0;
+    }
+    .tm-img{
+     width: 100%;
+     height: 450px;
+     border-radius: 0;
+    }
+    .img-container::after {
+     border-radius: 0;
+    }
+    .title {
+     font-size: 1.2rem; /* smaller for tablets/phones */
+      padding: 4px 20px;
+    }
+    
+    .title2 {
+      font-size: 1.8rem; /* smaller for tablets/phones */
+  }
+ }
+  @media (max-width: 480px) {
+    .img-container {
+     width: 100%;
+     height: 250px; 
+     border-radius: 0;
+    }
+    .tm-img{
+     width: 100%;
+     height: 250px;
+     border-radius: 0;
+    }
+    .img-container::after {
+     border-radius: 0;
+    }
+    .title {
+      font-size: 0.7rem; /* smallest for very small screens */
+      padding: 4px 20px;
+    }
+     .title2 {
+      font-size: 1.2rem; /* smallest for very small screens */
+    }
+  }
+
+
+
+
+  .squad-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* Space between position sections */
+}
+
+/* Position Headers */
+.position-title {
+    font-family: 'Aref Ruqaa', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+/* Flexbox Layout for the Cards */
+.player-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between cards */
+    align-items: start;
+    justify-content: center;
+}
+
+/* Individual Player Card */
+.player-card {
+    /* Calculate width for 4 items per row:
+      100% divided by 4, minus the gap space.
+      (3 gaps of 20px = 60px. 60px / 4 items = 15px to subtract per card)
+    */
+    width: calc(25% - 15px); 
+    aspect-ratio: 3 / 4; /* Keeps the cards rectangular */
+    background: linear-gradient(135deg, #232323 30%, #f9f9f9 100%); /* Bayern red gradient */
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    
+    /* Internal Flexbox to align name to bottom */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+}
+
+/* Card Typography & Elements */
+.player-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 2.2rem;
+    font-weight: 900;
+    z-index: 2;
+}
+
+.player-name {
+    position: absolute;
+    z-index: 2;
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* Placeholder for where the transparent PNGs would go */
+.player-image-placeholder img{
+  top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    
+}
+
+/* --- Responsive Flex Adjustments --- */
+
+/* 3 Cards per row on medium screens */
+@media (max-width: 1024px) {
+    .player-card {
+        width: calc(33.333% - 13.33px); 
+    }
+}
+
+/* 2 Cards per row on tablets */
+@media (max-width: 768px) {
+    .player-card {
+        width: calc(50% - 10px);
+    }
+}
+
+/* 1 Card per row on small phones */
+@media (max-width: 480px) {
+     .position-title {
+        text-align: center; /* Add some horizontal padding on small screens */ 
+        font-family: 2rem;
+}
+    .player-card {
+        width: 40%;
+    }
+}
