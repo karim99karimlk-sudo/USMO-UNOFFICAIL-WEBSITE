@@ -1,282 +1,338 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="USMO IMG/logo/cropped_circle_image.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Oi&display=swap" rel="stylesheet">
     <title>Squad List - Flexbox</title>
   <style>
-    /* Base Reset and Body Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    background-color: #ffffff; /* Dark background matching the image */
-    color: #000000;
-    font-family: 'Arial', sans-serif;
-    padding: 40px 20px;
-}
+    body{
+  margin: 0;
+  padding: 0;
 
-.squad-container {
-    max-width: 1250px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 50px; /* Space between position sections */
 }
-
-/* Position Headers */
-.position-title {
-    font-size: 1.2rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
+a{
+  text-decoration: none;
+  color: white;
 }
+       header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 100px;
+      background: rgb(0, 0, 0);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-/* Flexbox Layout for the Cards */
-.player-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Space between cards */
-}
+    .logo {
+      font-size: 32px;
+      font-family: 'Oi', sans-serif;
+    }
 
-/* Individual Player Card */
-.player-card {
-    /* Calculate width for 4 items per row:
-      100% divided by 4, minus the gap space.
-      (3 gaps of 20px = 60px. 60px / 4 items = 15px to subtract per card)
-    */
-    width: calc(25% - 15px); 
-    aspect-ratio: 3 / 4; /* Keeps the cards rectangular */
-    background: linear-gradient(135deg, #232323 30%, #f9f9f9 100%); /* Bayern red gradient */
-    border-radius: 4px;
-    position: relative;
-    overflow: hidden;
-    
-    /* Internal Flexbox to align name to bottom */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    
-}
 
-/* Card Typography & Elements */
-.player-number {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    font-size: 2.2rem;
-    font-weight: 900;
-    z-index: 2;
-}
+    /* NAV */
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
 
-.player-name {
-    position: absolute;
-    z-index: 2;
-    font-size: 1.1rem;
+    nav a {
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    line-height: 1.2;
+    font-size: 18px;
+    }
+
+    .hover-underline {
+  position: relative;
+  color: white;
+  text-decoration: none;
 }
 
-/* Placeholder for where the transparent PNGs would go */
-.player-image-placeholder img{
-  top: 0;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
+.hover-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+}
+
     
-}
-
-/* --- Responsive Flex Adjustments --- */
-
-/* 3 Cards per row on medium screens */
-@media (max-width: 1024px) {
-    .player-card {
-        width: calc(33.333% - 13.33px); 
+    /* ICONS */
+    .header-icons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
+
+    #menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 22px;
+    }
+
+    /* 🌍 LANGUAGE */
+    .lang-container {
+      position: relative;
+      cursor: pointer;
+    }
+    .lang-icon{
+      width: 22px;
+      height: 22px;
+      background: white;
+      padding: 10px;
+      border-radius: 50%;
+      text-align: center;
+      display: flex;
+      justify-content: center; /* horizontal */
+      align-items: center;
+
+    }
+    .lang-icon img{
+      width: 20px;
+    }
+    .lang-dropdown {
+      position: absolute;
+      top: 30px;
+      right: 0;
+      background: white;
+      border: 1px solid #eee;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      display: none;
+      flex-direction: column;
+      min-width: 120px;
+    }
+
+    .lang-dropdown a {
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+      text-align: center;
+    }
+
+    .lang-dropdown a:hover {
+      background: #f5f5f5;
+    }
+
+    .lang-dropdown.active {
+      display: flex;
+    }
+
+    #close-menu {
+      display: none;
+     }
+    /* 📱 MOBILE */
+@media (max-width: 906px) {
+
+      header{
+        padding: 15px 20px;
+      }
+
+  /* SIDEBAR NAV */
+  nav {
+    position: fixed;
+    top: 0;
+    left: -100%; /* hidden */
+    width: 90%;
+    height: 100vh;
+    background: black;
+    transition: 0.4s ease;
+    z-index: 2000;
+    padding-top: 80px;
+  }
+
+  nav.active {
+    left: 0; /* slide in */
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  nav a {
+    color: white;
+    font-size: 20px;
+  }
+
+  /* ☰ hidden on desktop already */
+  #menu-toggle {
+    display: block;
+  }
+
+  /*  CLOSE BUTTON */
+  #close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    display: block;
+  }
 }
 
-/* 2 Cards per row on tablets */
-@media (max-width: 768px) {
-    .player-card {
-        width: calc(50% - 10px);
-    }
+    @media (max-width: 768px) {
+
+      header{
+        padding: 15px 20px;
+      }
+
+  .logo{
+    font-size: 1.6rem;
+  }
+  /* SIDEBAR NAV */
+  nav {
+    position: fixed;
+    top: 0;
+    left: -100%; /* hidden */
+    width: 90%;
+    height: 100vh;
+    background: black;
+    transition: 0.4s ease;
+    z-index: 2000;
+    padding-top: 80px;
+  }
+
+  nav.active {
+    left: 0; /* slide in */
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  nav a {
+    color: white;
+    font-size: 20px;
+    
+  }
+
+  /* ☰ hidden on desktop already */
+  #menu-toggle {
+    display: block;
+  }
+
+  /*  CLOSE BUTTON */
+  #close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    display: block;
+  }
 }
 
-/* 1 Card per row on small phones */
-@media (max-width: 480px) {
-    .player-card {
-        width: 100%;
-    }
-}
   </style>
   </head>
 <body>
+<header>
+  <div class="logo">
+   <a href="index.html">الإتحاد</a>
+  </div>
 
-<div class="squad-container">
+  <nav id="nav">
+    <i class="fa-solid fa-xmark close-menu" id="close-menu"></i>
+    <ul>
+      <li><a class="hover-underline" href="academy.html">المدرسة</a></li>
+      <li><a class="hover-underline" href="history.html">التاريخ</a></li>
+      <li><a class="hover-underline" href="team.html">الفريق</a></li>
+      <li><a class="hover-underline" href="schedule.html">الجدول</a></li>
+      <li><a class="hover-underline" href="standings.html">الترتيب</a></li>
+    </ul>
+  </nav>
 
-    <section class="position-group">
-        <h2 class="position-title">GOALKEEPERS</h2>
-        <div class="player-list">
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Kaaouachi.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Abdel Allah amghar.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/El ichaoui.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-number">--</div>
-                <div class="player-image-placeholder"></div>
-                <div class="player-name">Amin<br>Ghanimi</div>
-            </div>
-        </div>
-    </section>
+  <div class="header-icons">
+    <div class=""></div>
+    <div class=""></div>
+    <div class=""></div>
+    <div class=""></div>
+    <div class=""></div>
+    <div class=""></div>
+    <!-- 🌍 Language -->
+    
 
-    <section class="position-group">
-        <h2 class="position-title">DEFENDERS</h2>
-        <div class="player-list">
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Maldini.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Younes Douib.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Aklidou.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Nafai.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Ialioune.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Touihine.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Yassine bouaali.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Zakaria Martil.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Ahmed zouaq.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- ☰ Menu -->
+    <i class="fa-solid fa-bars" id="menu-toggle"></i>
+    
+  </div>
+</header>
+<script>
+  
+  const menuToggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav");
 
-    <section class="position-group">
-        <h2 class="position-title">MIDFIELDERS</h2>
-        <div class="player-list">
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Oussama dahr.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Azeroual.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Zouhir Jbilo.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Hamz Elbaroudi.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Qarqour.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Hammoch.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-number">--</div>
-                <div class="player-image-placeholder"></div>
-                <div class="player-name">Joseph <br> Ndongo Mintong</div>                
-            </div>
-        </div>
-    </section>
 
-    <section class="position-group">
-        <h2 class="position-title">FORWARDS</h2>
-        <div class="player-list">
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Oussama sghiri.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Badr mahdoub.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Taha dayf.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Mouatassim.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Yassin marzougi.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-number">99</div>
-                <div class="player-image-placeholder"></div>
-                <div class="player-name">Ibrahim<br>El Omari</div>                
-            </div>
 
-            
-        </div>
-    </section>
-</div>
+  // ☰ MENU CLICK
+  menuToggle.onclick = (e) => {
+    e.stopPropagation();
+    nav.classList.toggle("active");
+  };
+
+
+  // CLICK OUTSIDE CLOSES EVERYTHING
+  document.onclick = () => {
+    nav.classList.remove("active");
+    langMenu.classList.remove("active");
+  };
+
+  const closeMenu = document.getElementById("close-menu");
+
+// OPEN
+menuToggle.onclick = (e) => {
+  e.stopPropagation();
+  nav.classList.add("active");
+  langMenu.classList.remove("active");
+};
+
+// CLOSE with X
+closeMenu.onclick = (e) => {
+  e.stopPropagation();
+  nav.classList.remove("active");
+};
+
+
+// CLICK OUTSIDE
+document.onclick = (e) => {
+  if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+    nav.classList.remove("active");
+  }
+
+  if (!langBtn.contains(e.target)) {
+    langMenu.classList.remove("active");
+  }
+};
+
+
+  </script>
 
 </body>
 </html>
