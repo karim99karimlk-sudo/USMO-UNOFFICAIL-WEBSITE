@@ -24,12 +24,37 @@ a{
   margin-bottom: 10px;
 }
 
-.schedule-container h3{
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-  font-family: 'Sekuya', sans-serif;
-  margin-bottom: 5px;
+
+.schedule-top{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+#seasonSelect{
+    padding:10px 16px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:15px;
+    cursor:pointer;
+    background:#fff;
+}
+
+@media(max-width:768px){
+
+    .schedule-top{
+        justify-content:center;
+        gap:15px;
+        flex-direction:column;
+    }
+
+    #seasonSelect{
+        width:180px;
+    }
+
 }
 
 .schedule-header {
@@ -77,8 +102,8 @@ a{
     background-color: #000000;
     color: white;
     border: none;
-    width: 80px;
-    height: 50px;
+    width: 60px;
+    height: 40px;
     border-radius: 12px;
     font-weight: bold;
     cursor: pointer;
@@ -124,3 +149,5 @@ a{
         font-size: 16px;
     }
 }
+
+

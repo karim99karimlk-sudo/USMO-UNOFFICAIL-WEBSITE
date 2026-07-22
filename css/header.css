@@ -1,225 +1,130 @@
-   header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 100px;
-      background: rgb(0, 0, 0);
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .logo {
-      font-size: 32px;
-      font-family: 'Oi', sans-serif;
-    }
-
-
-    /* NAV */
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 25px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: rgb(255, 255, 255);
-      font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    font-size: 18px;
-    }
-
-    .hover-underline {
-  position: relative;
-  color: white;
-  text-decoration: none;
+/* HEADER */
+header{
+    position:fixed;
+    top:0;
+    right:0;
+    left: 0;
+    height:80px;
+    background:#000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 40px;
+    z-index:1000;
+    transition:transform .3s ease;
 }
 
-.hover-underline::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background-color: white;
-  transition: width 0.3s ease;
+header.hide{
+    transform:translateY(-100%);
 }
 
-.hover-underline:hover::after {
-  width: 100%;
+.logo a{
+    color:#fff;
+    text-decoration:none;
+    font-size:32px;
+    font-family: "Oi";
 }
 
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:18px;
+    position:relative;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    right:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:#fff;
+    transition:.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+.header-icons{
+    display:flex;
+    align-items:center;
+    justify-content: end;
+}
+
+#menu-toggle{
+    display:none;
+    color:#fff;
+    font-size:28px;
+    cursor:pointer;
+}
+
+#close-menu{
+    display:none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+header{
+    padding:0 20px;
+  
+}
+
+.logo a{
+    font-size:26px;
+      justify-content:start;
+}
+
+#menu-toggle{
+    display:block;
     
-    /* ICONS */
-    .header-icons {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    #menu-toggle {
-      display: none;
-      cursor: pointer;
-      font-size: 22px;
-    }
-
-    /* 🌍 LANGUAGE */
-    .lang-container {
-      position: relative;
-      cursor: pointer;
-    }
-    .lang-icon{
-      width: 22px;
-      height: 22px;
-      background: white;
-      padding: 10px;
-      border-radius: 50%;
-      text-align: center;
-      display: flex;
-  justify-content: center; /* horizontal */
-  align-items: center;
-
-    }
-    .lang-icon img{
-      width: 20px;
-    }
-    .lang-dropdown {
-      position: absolute;
-      top: 30px;
-      right: 0;
-      background: white;
-      border: 1px solid #eee;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      border-radius: 8px;
-      display: none;
-      flex-direction: column;
-      min-width: 120px;
-    }
-
-    .lang-dropdown a {
-      padding: 10px;
-      text-decoration: none;
-      color: black;
-      text-align: center;
-    }
-
-    .lang-dropdown a:hover {
-      background: #f5f5f5;
-    }
-
-    .lang-dropdown.active {
-      display: flex;
-    }
-
-    #close-menu {
-      display: none;
-     }
-    /* 📱 MOBILE */
-@media (max-width: 906px) {
-
-      header{
-        padding: 15px 20px;
-      }
-
-  /* SIDEBAR NAV */
-  nav {
-    position: fixed;
-    top: 0;
-    left: -100%; /* hidden */
-    width: 90%;
-    height: 100vh;
-    background: black;
-    transition: 0.4s ease;
-    z-index: 2000;
-    padding-top: 80px;
-  }
-
-  nav.active {
-    left: 0; /* slide in */
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-
-  nav a {
-    color: white;
-    font-size: 20px;
-  }
-
-  /* ☰ hidden on desktop already */
-  #menu-toggle {
-    display: block;
-  }
-
-  /*  CLOSE BUTTON */
-  #close-menu {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 26px;
-    color: white;
-    cursor: pointer;
-    display: block;
-  }
 }
 
-    @media (max-width: 768px) {
+nav{
+        position:fixed;
+        top:0;
+        right:-100%;   /* Instead of left:-100% */
+        left:auto;
+        width:80%;
+        height:100vh;
+        background:#000;
+        transition:.35s;
+        z-index:2000;
+        padding-top:80px;
+    }
 
-      header{
-        padding: 15px 20px;
-      }
+    nav.active{
+        right:0;       /* Instead of left:0 */
+    }
 
-  .logo{
-    font-size: 1.6rem;
-  }
-  /* SIDEBAR NAV */
-  nav {
-    position: fixed;
-    top: 0;
-    left: -100%; /* hidden */
-    width: 90%;
-    height: 100vh;
-    background: black;
-    transition: 0.4s ease;
-    z-index: 2000;
-    padding-top: 80px;
-  }
+    nav ul{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:35px;
+    }
 
-  nav.active {
-    left: 0; /* slide in */
-  }
+nav a{
+    font-size:22px;
+}
 
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-
-  nav a {
-    color: white;
-    font-size: 20px;
-    
-  }
-
-  /* ☰ hidden on desktop already */
-  #menu-toggle {
-    display: block;
-  }
-
-  /*  CLOSE BUTTON */
-  #close-menu {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 26px;
-    color: white;
-    cursor: pointer;
-    display: block;
-  }
+#close-menu{
+        display:block;
+        position:absolute;
+        top:20px;
+        left:20px;     /* Left side inside an RTL sidebar */
+        right:auto;
+        font-size:32px;
+        color:#fff;
+        cursor:pointer;
+        z-index:2100;
+    }
 }
