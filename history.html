@@ -23,36 +23,28 @@
   </style>
 </head>
 <body>
-  <header>
-  <div class="logo">
-   <a href="index.html">الإتحاد</a>
-  </div>
+  <header id="header">
 
-  <nav id="nav">
-    <i class="fa-solid fa-xmark close-menu" id="close-menu"></i>
-    <ul>
-      <li><a class="hover-underline" href="academy.html">المدرسة</a></li>
-      <li><a class="hover-underline" href="history.html">التاريخ</a></li>
-      <li><a class="hover-underline" href="team.html">الفريق</a></li>
-      <li><a class="hover-underline" href="schedule.html">الجدول</a></li>
-      <li><a class="hover-underline" href="standings.html">الترتيب</a></li>
-    </ul>
-  </nav>
+    <div class="logo">
+        <a href="index.html">الإتحاد</a>
+    </div>
 
-  <div class="header-icons">
-    <div class=""></div>
-    <div class=""></div>
-    <div class=""></div>
-    <div class=""></div>
-    <div class=""></div>
-    <div class=""></div>
-    <!-- 🌍 Language -->
-    
+    <nav id="nav">
+        <i class="fa-solid fa-xmark" id="close-menu"></i>
 
-    <!-- ☰ Menu -->
-    <i class="fa-solid fa-bars" id="menu-toggle"></i>
-    
-  </div>
+        <ul>
+            <li><a href="academy.html">المدرسة</a></li>
+            <li><a href="history.html">التاريخ</a></li>
+            <li><a href="team.html">الفريق</a></li>
+            <li><a href="schedule.html">الجدول</a></li>
+            <li><a href="standings.html">الترتيب</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-icons">
+        <i class="fa-solid fa-bars" id="menu-toggle"></i>
+    </div>
+
 </header>
 
 <main>
@@ -241,52 +233,8 @@
   </div>
 </footer> 
 
-  <script>
-  
-  const menuToggle = document.getElementById("menu-toggle");
-  const nav = document.getElementById("nav");
+    <script src="header.js"></script>
 
-
-  // ☰ MENU CLICK
-  menuToggle.onclick = (e) => {
-    e.stopPropagation();
-    nav.classList.toggle("active");
-  };
-
-  // CLICK OUTSIDE CLOSES EVERYTHING
-  document.onclick = () => {
-    nav.classList.remove("active");
-    langMenu.classList.remove("active");
-  };
-
-
-
-  const closeMenu = document.getElementById("close-menu");
-
-// OPEN
-menuToggle.onclick = (e) => {
-  e.stopPropagation();
-  nav.classList.add("active");
-  langMenu.classList.remove("active");
-};
-
-// CLOSE with X
-closeMenu.onclick = (e) => {
-  e.stopPropagation();
-  nav.classList.remove("active");
-};
-
-// CLICK OUTSIDE
-document.onclick = (e) => {
-  if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
-    nav.classList.remove("active");
-  }
-
-  if (!langBtn.contains(e.target)) {
-    langMenu.classList.remove("active");
-  }
-};
-  </script>
 </body>
 
 </html>

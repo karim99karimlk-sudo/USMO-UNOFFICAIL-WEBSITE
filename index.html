@@ -23,18 +23,18 @@
 <header id="header">
 
     <div class="logo">
-        <a href="#">الإتحاد</a>
+        <a href="index.html">الإتحاد</a>
     </div>
 
     <nav id="nav">
         <i class="fa-solid fa-xmark" id="close-menu"></i>
 
         <ul>
-            <li><a href="#">المدرسة</a></li>
-            <li><a href="#">التاريخ</a></li>
-            <li><a href="#">الفريق</a></li>
-            <li><a href="#">الجدول</a></li>
-            <li><a href="#">الترتيب</a></li>
+            <li><a href="academy.html">المدرسة</a></li>
+            <li><a href="history.html">التاريخ</a></li>
+            <li><a href="team.html">الفريق</a></li>
+            <li><a href="schedule.html">الجدول</a></li>
+            <li><a href="standings.html">الترتيب</a></li>
         </ul>
     </nav>
 
@@ -58,26 +58,31 @@
         <div class="match-card">
           <div class="h2">المباراة القادمة</div>
           <div class="card">
-            <div class="date"><strong>الأسبوع --</strong> - 00-00-00</div>
+            <div class="date"><strong>الدورة --</strong> - 00-00-00</div>
             <div class="teams">
               <div class="team1">
-                <img src="USMO IMG/logo/cropped_circle_image.png" alt="">
+                <img src="USMO IMG/logo/cropped_circle_image.png" alt=""> <br> --
               </div>
               <div class="result">
                 VS
               </div>
               <div class="team2">
-                <img src="USMO IMG/Icons/unknown.team.png" alt="">
+                <img src="USMO IMG/Icons/unknown.team.png" alt=""> <br> --
               </div>
             </div>
-            <div class=""></div>
+            <div class="highlights-link">
+              <a style="display: none;" href="#" target="_blank">
+                <i class="fa-solid fa-play"></i>
+                ملخص المباراة
+              </a>
+            </div>
           </div>
         </div>
 
         <div class="match-card">
           <div class="h2">المباراة الأخيرة</div>
           <div class="card">
-            <div class="date"><strong>الأسبوع </strong> - 00-00-00 --</div>
+            <div class="date"><strong>الدورة </strong> - 00-00-00 --</div>
             <div class="teams">
               <div class="team1">
                 <img src="USMO IMG/logo/cropped_circle_image.png" alt=""> <br> USMO
@@ -90,7 +95,7 @@
               </div>
             </div>
             <div class="highlights-link">
-              <a href="https://www.youtube.com/watch?v=H4Emwwroln0" target="_blank">
+              <a style="display: none;" href="#" target="_blank">
                 <i class="fa-solid fa-play"></i>
                 ملخص المباراة
               </a>
@@ -195,31 +200,101 @@
   <a href="standings.html" class="full-link">الترتيب كامل</a>
 </section>
 
-<section class="squad">
-  <h2> الفريق الأول</h2>
+<section class="squad-container">
+  <section class="position-group">
+            <h2 class="position-title">الفريق الأول</h2>
+            <div class="player-grid">
+                
+                <!-- Player 1 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">1</span>
+                            <div class="player-image-placeholder" style="background-image: url('USMO IMG/Team/Aklidou.jpg');"></div>
+                            <div class="player-info">
+                                <span class="player-name">Manuel<br>Neuer</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 38</p>
+                                <p><span>Height:</span> 1.93m</p>
+                                <p><span>Matches:</span> 34</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-  <div class="players-wrapper">
-    <div class="player-card">
-      <img src="USMO IMG/Team/Badr mahdoub.jpg">
-    </div>
+                <!-- Player 2 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">26</span>
+                            <div class="player-image-placeholder" style="background-image: url('USMO IMG/Team/Azeroual.jpg');"></div>
+                            <div class="player-info">
+                                <span class="player-name">Sven<br>Ulreich</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 35</p>
+                                <p><span>Height:</span> 1.92m</p>
+                                <p><span>Matches:</span> 12</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="player-card">
-      <img src="USMO IMG/Team/Hammoch.jpg">
-    </div>
+                <!-- Player 3 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">40</span>
+                            <div class="player-image-placeholder" style="background-image: url('USMO IMG/Team/Badr\ mahdoub.jpg');"></div>
+                            <div class="player-info">
+                                <span class="player-name">Daniel<br>Peretz</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 24</p>
+                                <p><span>Height:</span> 1.90m</p>
+                                <p><span>Matches:</span> 2</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="player-card">
-      <img src="USMO IMG/Team/Oussama dahr.jpg">
-    </div>
+                <!-- Player 4 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">48</span>
+                            <div class="player-image-placeholder" style="background-image: url('USMO IMG/Team/Abdel Allah amghar.jpg');"></div>
+                            <div class="player-info">
+                                <span class="player-name">Tom<br>Ritzy</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 19</p>
+                                <p><span>Height:</span> 1.88m</p>
+                                <p><span>Matches:</span> 0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="player-card">
-      <img src="USMO IMG/Team/Zouhir Jbilo.jpg">
-    </div>
-  </div>
+            </div>
 
-  
-    <a href="team.html" class="full-link">الفريق كامل</a>
+              
+   
+  </section>
+    <a style="display: flex; justify-content: center; max-width: 80px; margin: 0 auto; align-items: center;" href="standings.html" class="full-link">الفريق كامل</a>
 
 </section>
+
+
 
 <section class="history">
   <h2>التاريخ</h2>
@@ -236,7 +311,7 @@
 
     <p>أنتجت مدرسة النادي العديد من الأسماء البارزة في كرة القدم على الصعيدين الوطني والدولي. وعلى مرّ السنوات، بنى النادي سمعة قوية في تطوير المواهب الشابة وتكوين لاعبين محترفين للمستقبل. 
   </p>
-    <a href="history.html" class="full-link">التاريخ كامل</a>
+    <a href="history.html" class="full-link" style=" margin-bottom: 10px;">التاريخ كامل</a>
 
 </section>
 

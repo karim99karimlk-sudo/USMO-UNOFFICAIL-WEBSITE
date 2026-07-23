@@ -1,8 +1,8 @@
 body{
   margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  
+  padding-top: 50px;
+  font-family: '', sans-serif;
+  background-color: #000000;
 
 }
 a{
@@ -22,6 +22,7 @@ a{
   font-weight: bold;
   font-family: 'Sekuya', sans-serif;
   margin-bottom: 10px;
+  color: #ffffff;
 }
 
 
@@ -40,7 +41,8 @@ a{
     border-radius:8px;
     font-size:15px;
     cursor:pointer;
-    background:#fff;
+    background:#000000;
+    color: white;
 }
 
 @media(max-width:768px){
@@ -68,26 +70,36 @@ a{
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
+    color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.769) ;
+    border-radius: 10px;
+
 }
 
 .schedule-table th {
-    color: #888;
+    color: #ffffff;
     font-weight: 500;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
     border-bottom: 1px solid #eee;
 }
 
 .schedule-table td {
-    padding: 12px 15px;
+    padding: 5px 15px;
     vertical-align: middle;
     text-align: center;
 }
 
 .alt-row {
-    background-color: #f9f9f9;
+    background-color: #111;
+}
+.schedule-table tbody tr{
+    transition:.2s;
 }
 
+.schedule-table tbody tr:hover{
+    background:#222;
+}
 .left {
    text-align: left;
    align-items:start;
@@ -96,14 +108,15 @@ a{
 .score {
     font-family: monospace;
     font-size: 1.1rem;
+    padding: 2px;
 }
 
 .info-btn {
     background-color: #000000;
     color: white;
     border: none;
-    width: 60px;
-    height: 40px;
+    width: 50px;
+    height: 35px;
     border-radius: 12px;
     font-weight: bold;
     cursor: pointer;
@@ -124,12 +137,10 @@ a{
 }
 
 .icon {
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
-.center{
-    text-align: center;
-}
+
 
 @media screen and (max-width: 768px) {
     .schedule-table th,
@@ -151,3 +162,26 @@ a{
 }
 
 
+.score{
+    font-family: monospace;
+    font-size: 1.1rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: inline-block;
+    min-width: 45px;
+}
+
+.score.win{
+    background:#1f8b3a;
+    color:#fff;
+}
+
+.score.loss{
+    background:#c62828;
+    color:#fff;
+}
+
+.score.draw{
+    background:#666;
+    color:#fff;
+}

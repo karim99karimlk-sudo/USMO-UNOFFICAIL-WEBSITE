@@ -2,12 +2,12 @@ body{
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  
+  background-color: #000000;
 
 }
 a{
   text-decoration: none;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 
@@ -20,14 +20,15 @@ a{
 
 .standings h2 {
   font-family: 'Sekuya', sans-serif;
-  color: #000000;
-  margin-bottom: 30px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  margin-top: 40px;
   font-size: 2rem;
 }
 
 .standings h3 {
   font-family: 'Sekuya', sans-serif;
-  color: #000000;
+  color: #ffffff;
   margin-bottom: 30px;
 }
 
@@ -44,6 +45,8 @@ a{
 #seasonSelect{
     padding:10px 15px;
     border:1px solid #444;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.769);
+    text-align: center;
     border-radius:8px;
     background:#111;
     color:#fff;
@@ -66,7 +69,7 @@ a{
   display: grid;
   grid-template-columns: 50px 2fr repeat(8, 1fr);
   align-items: center;
-  padding: 15px 10px;
+  padding: 10px 10px;
 }
 
 .table-header {
@@ -75,17 +78,19 @@ a{
 }
 
 .table-row {
-  background: #f2f2f2;
-  margin-bottom: 2px;
+  background: #000000;
+  color: #ffffff;
+  border-bottom: 2px solid #e7e7e7ee;
   border-radius: 4px;
 }
 .table-row:hover {
-  background: #e0e0e0;
+  background: #2f2f2f;
 }
 
 .table-row.active {
-  background: #141414;
-  color: white;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
 }
 
 .table-row .team {
@@ -97,21 +102,7 @@ a{
   text-align: left;
 }
 
-.full-btn {
-  margin-top: 25px;
-  background: #000000;
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 25px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
 
-.full-btn:hover {
-  background: #888888;
-}
 
 @media (max-width: 480px) {
   .table-header span:nth-child(4), /* W */
@@ -146,7 +137,7 @@ a{
   display: grid;
   grid-template-columns: 50px 2fr repeat(4, 1fr);  
   align-items: center;
-  padding: 15px 10px;
+  padding: 5px 10px;
   
 }
 }

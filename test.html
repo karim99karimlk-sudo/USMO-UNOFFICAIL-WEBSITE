@@ -1,32 +1,205 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Responsive Header</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Squad</title>
+
+  <link rel="shortcut icon" href="USMO IMG/logo/cropped_circle_image.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Oi&display=swap" rel="stylesheet">
 
-body{
-    font-family:"Cairo",sans-serif;
-    background:#f5f5f5;
-    padding-top:80px;
-}
+    <style>
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* HEADER */
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            padding-top: 80px;
+        }
+
+        /* Main Container */
+        .squad-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 40px; 
+        }
+
+        /* Position Section */
+        .position-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .position-title {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+
+        /* --- Flexbox Grid --- */
+        .player-grid {
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 15px; 
+        }
+
+        /* --- Card Flip Container --- */
+        .player-card {
+            flex: 0 0 calc(25% - 11.25px); 
+            aspect-ratio: 3 / 4; 
+            perspective: 1000px; /* Required for 3D effect */
+            background-color: transparent;
+        }
+
+        /* Inner wrapper that actually rotates */
+        .player-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d; /* Allows 3D elements inside */
+        }
+
+        /* Trigger the flip on hover */
+        .player-card:hover .player-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* Base styles for both faces */
+        .player-card-front, 
+        .player-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden; /* Safari */
+            backface-visibility: hidden; /* Hides the back of the element when turned away */
+            overflow: hidden;
+            border-radius: 4px; /* Optional: adds a slight rounding to the cards */
+        }
+
+        /* --- Front Face Styles --- */
+        .player-card-front {
+            background: linear-gradient(180deg, #444 0%, #222 100%);
+        }
+
+        .player-image-placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: #555; /* Fallback color */
+            background-image: url('path-to-your-player-image-with-transparent-bg.png'); 
+            background-size: cover;
+            background-position: center bottom;
+        }
+
+        .player-number {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .player-info {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            z-index: 2;
+        }
+
+        .player-name {
+            font-size: 0.75rem;
+            font-weight: 600;
+            line-height: 1.2;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        /* Gradient Overlay for Text Readability on Front */
+        .player-card-front::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        /* --- Back Face Styles --- */
+        .player-card-back {
+            background: #dadada;
+            border: 1px solid #333;
+            transform: rotateY(180deg); /* Starts already flipped so it faces away */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Styling the data on the back */
+        .player-stats {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .player-stats p {
+            font-size: 0.8rem;
+            color: #000000;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #333;
+            padding-bottom: 4px;
+        }
+
+        .player-stats span {
+            color: #000000;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.7rem;
+        }
+
+        /* Responsive Adjustments for Mobile */
+        @media (max-width: 768px) {
+            .player-card {
+                flex: 0 0 calc(33.333% - 10px); /* 3 cards per row on tablets */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .player-card {
+                flex: 0 0 calc(50% - 7.5px); /* 2 cards per row on phones */
+            }
+        }
+    </style>
+    <style>
+        /* HEADER */
 header{
     position:fixed;
     top:0;
     right:0;
-    width:100%;
-    height:80px;
-    background:#000;
+    left: 0;
+    height:70px;
+    background:#ffffff;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -40,11 +213,10 @@ header.hide{
 }
 
 .logo a{
-    color:#fff;
+    color:#000;
     text-decoration:none;
     font-size:32px;
-    font-weight:bold;
-    font-family: Oi;
+    font-family: "Oi";
 }
 
 nav ul{
@@ -54,9 +226,10 @@ nav ul{
 }
 
 nav a{
-    color:#fff;
+    color:#000000;
     text-decoration:none;
-    font-size:18px;
+    font-size:22px;
+    font-weight: bold;
     position:relative;
 }
 
@@ -67,7 +240,7 @@ nav a::after{
     bottom:-5px;
     width:0;
     height:2px;
-    background:#fff;
+    background:#000000;
     transition:.3s;
 }
 
@@ -78,6 +251,7 @@ nav a:hover::after{
 .header-icons{
     display:flex;
     align-items:center;
+    justify-content: end;
 }
 
 #menu-toggle{
@@ -96,80 +270,78 @@ nav a:hover::after{
 
 header{
     padding:0 20px;
+  
 }
 
 .logo a{
     font-size:26px;
+      justify-content:start;
 }
 
 #menu-toggle{
     display:block;
+    
 }
 
 nav{
-    position:fixed;
-    top:0;
-    left:-100%;
-    width:80%;
-    height:100vh;
-    background:#000;
-    transition:.35s;
-    z-index:2000;
-    padding-top:80px;
-}
+        position:fixed;
+        top:0;
+        right:-100%;   /* Instead of left:-100% */
+        left:auto;
+        width:80%;
+        height:100vh;
+        background:#000;
+        transition:.35s;
+        z-index:2000;
+        padding-top:80px;
+    }
 
-nav.active{
-    left:0;
-}
+    nav.active{
+        right:0;       /* Instead of left:0 */
+    }
 
-nav ul{
-    flex-direction:column;
-    align-items:center;
-    gap:35px;
-}
+    nav ul{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:35px;
+    }
 
 nav a{
     font-size:22px;
 }
 
 #close-menu{
-    display:block;
-    position:absolute;
-    top:20px;
-    right:20px;
-    color:#fff;
-    font-size:32px;
-    cursor:pointer;
+        display:block;
+        position:absolute;
+        top:20px;
+        left:20px;     /* Left side inside an RTL sidebar */
+        right:auto;
+        font-size:32px;
+        color:#fff;
+        cursor:pointer;
+        z-index:2100;
+    }
 }
-}
-
-/* Demo content */
-section{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:40px;
-}
-</style>
+    </style>
 </head>
 <body>
 
-<header id="header">
+    <header id="header">
 
     <div class="logo">
-        <a href="#">الإتحاد</a>
+        <a href="index.html">الإتحاد</a>
     </div>
 
     <nav id="nav">
         <i class="fa-solid fa-xmark" id="close-menu"></i>
 
         <ul>
-            <li><a href="#">المدرسة</a></li>
-            <li><a href="#">التاريخ</a></li>
-            <li><a href="#">الفريق</a></li>
-            <li><a href="#">الجدول</a></li>
-            <li><a href="#">الترتيب</a></li>
+            <li><a href="academy.html">المدرسة</a></li>
+            <li><a href="history.html">التاريخ</a></li>
+            <li><a href="team.html">الفريق</a></li>
+            <li><a href="schedule.html">الجدول</a></li>
+            <li><a href="standings.html">الترتيب</a></li>
         </ul>
     </nav>
 
@@ -179,59 +351,507 @@ section{
 
 </header>
 
-<section>مرر للأسفل</section>
-<section>القسم الثاني</section>
-<section>القسم الثالث</section>
-<section>القسم الرابع</section>
+    <main class="squad-container">
+        
+        <!-- Goalkeepers Section -->
+        <section class="position-group">
+            <h2 class="position-title">حراس المرمى</h2>
+            <div class="player-grid">
+                
+                <!-- Player 1 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">1</span>
+                            <div class="player-image-placeholder" style="background-image: url('USMO IMG/Team/Aklidou.jpg');"></div>
+                            <div class="player-info">
+                                <span class="player-name">Manuel<br>Neuer</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 38</p>
+                                <p><span>Height:</span> 1.93m</p>
+                                <p><span>Matches:</span> 34</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<script>
-const header = document.getElementById("header");
-const nav = document.getElementById("nav");
-const menuToggle = document.getElementById("menu-toggle");
-const closeMenu = document.getElementById("close-menu");
+                <!-- Player 2 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">26</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Sven<br>Ulreich</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 35</p>
+                                <p><span>Height:</span> 1.92m</p>
+                                <p><span>Matches:</span> 12</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-let lastScroll = 0;
+                <!-- Player 3 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">40</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Daniel<br>Peretz</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 24</p>
+                                <p><span>Height:</span> 1.90m</p>
+                                <p><span>Matches:</span> 2</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-// Open menu
-menuToggle.addEventListener("click", (e)=>{
-    e.stopPropagation();
-    nav.classList.add("active");
-});
+                <!-- Player 4 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">48</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Tom<br>Ritzy</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 19</p>
+                                <p><span>Height:</span> 1.88m</p>
+                                <p><span>Matches:</span> 0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-// Close menu
-closeMenu.addEventListener("click",(e)=>{
-    e.stopPropagation();
-    nav.classList.remove("active");
-});
+            </div>
+        </section>
 
-// Click outside
-document.addEventListener("click",(e)=>{
-    if(!nav.contains(e.target) && !menuToggle.contains(e.target)){
-        nav.classList.remove("active");
-    }
-});
+        <!-- Defenders Section -->
+        <section class="position-group">
+            <h2 class="position-title">المدافعين</h2>
+            <div class="player-grid">
+                
+                <!-- Player 1 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">2</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Dayot<br>Upamecano</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 25</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-// Hide / Show header
-window.addEventListener("scroll",()=>{
+                <!-- Player 2 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">3</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Minjae<br>Kim</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 27</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    if(nav.classList.contains("active")) return;
+                <!-- Player 3 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">4</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Matthijs<br>de Ligt</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 24</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    const currentScroll = window.scrollY;
+                <!-- Player 4 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">19</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Alphonso<br>Davies</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 23</p>
+                                <p><span>Position:</span> LB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    if(currentScroll <= 0){
-        header.classList.remove("hide");
-        return;
-    }
+                <!-- Player 5 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">21</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Hiroki<br>Ito</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 25</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    if(currentScroll > lastScroll && currentScroll > 80){
-        header.classList.add("hide");
-    }else if(currentScroll < lastScroll){
-        header.classList.remove("hide");
-    }
+            </div>
+        </section>
 
-    lastScroll = currentScroll;
-});
-</script>
+        <section class="position-group">
+            <h2 class="position-title">الوسط</h2>
+            <div class="player-grid">
+                
+                <!-- Player 1 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">2</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Dayot<br>Upamecano</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 25</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 2 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">3</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Minjae<br>Kim</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 27</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 3 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">4</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Matthijs<br>de Ligt</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 24</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 4 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">19</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Alphonso<br>Davies</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 23</p>
+                                <p><span>Position:</span> LB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 5 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">21</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Hiroki<br>Ito</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 25</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+         <section class="position-group">
+            <h2 class="position-title">المهاجمين</h2>
+            <div class="player-grid">
+                
+                <!-- Player 1 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">2</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Dayot<br>Upamecano</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 25</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 2 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">3</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Minjae<br>Kim</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 27</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 3 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">4</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Matthijs<br>de Ligt</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 24</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 4 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">19</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Alphonso<br>Davies</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 23</p>
+                                <p><span>Position:</span> LB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 5 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">21</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Hiroki<br>Ito</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 25</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+         <section class="position-group">
+            <h2 class="position-title">الطاقم</h2>
+            <div class="player-grid">
+                
+                <!-- Player 1 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">2</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Dayot<br>Upamecano</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 25</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 2 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">3</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Minjae<br>Kim</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 27</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 3 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">4</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Matthijs<br>de Ligt</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 24</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 4 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">19</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Alphonso<br>Davies</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 23</p>
+                                <p><span>Position:</span> LB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 5 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">21</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Hiroki<br>Ito</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 25</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+    </main>
 
 </body>
 </html>

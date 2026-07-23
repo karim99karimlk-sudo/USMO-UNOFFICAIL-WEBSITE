@@ -20,36 +20,28 @@
   <link rel="stylesheet" href="css/team.css">
 </head>
 <body>
-  <header>
-  <div class="logo">
-   <a href="index.html">الإتحاد</a>
-  </div>
+  <header id="header">
 
-  <nav id="nav">
-    <i class="fa-solid fa-xmark close-menu" id="close-menu"></i>
-    <ul>
-      <li><a class="hover-underline" href="academy.html">المدرسة</a></li>
-      <li><a class="hover-underline" href="history.html">التاريخ</a></li>
-      <li><a class="hover-underline" href="team.html">الفريق</a></li>
-      <li><a class="hover-underline" href="schedule.html">الجدول</a></li>
-      <li><a class="hover-underline" href="standings.html">الترتيب</a></li>
-    </ul>
-  </nav>
+    <div class="logo">
+        <a href="index.html">الإتحاد</a>
+    </div>
 
-  <div class="header-icons">
-    <div class=""></div>
-    <div class=""></div>
-    <div class=""></div>
-    <div class=""></div>
-    <div class=""></div>
-    <div class=""></div>
-    <!-- 🌍 Language -->
-    
+    <nav id="nav">
+        <i class="fa-solid fa-xmark" id="close-menu"></i>
 
-    <!-- ☰ Menu -->
-    <i class="fa-solid fa-bars" id="menu-toggle"></i>
-    
-  </div>
+        <ul>
+            <li><a href="academy.html">المدرسة</a></li>
+            <li><a href="history.html">التاريخ</a></li>
+            <li><a href="team.html">الفريق</a></li>
+            <li><a href="schedule.html">الجدول</a></li>
+            <li><a href="standings.html">الترتيب</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-icons">
+        <i class="fa-solid fa-bars" id="menu-toggle"></i>
+    </div>
+
 </header>
   <body>
     <section class="img-container" style="margin-bottom: 40px;">
@@ -58,164 +50,508 @@
           <div id="title2" class="title2">الإتحاد الرياضي الإسلامي الوجدي</div>
     </section>
 
-    <div class="squad-container">
+    <main class="squad-container">
+        
+        <!-- Goalkeepers Section -->
+        <section class="position-group">
+            <h2 class="position-title">حراس المرمى</h2>
+            <div class="player-grid">
+                
+                <!-- Player 1 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">1</span>
+                            <div class="player-image-placeholder" style="background-image: url('USMO IMG/Team/Aklidou.jpg');"></div>
+                            <div class="player-info">
+                                <span class="player-name">Manuel<br>Neuer</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 38</p>
+                                <p><span>Height:</span> 1.93m</p>
+                                <p><span>Matches:</span> 34</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <section class="position-group">
-        <h2 class="position-title">حراس المرمى</h2>
-        <div class="player-list">
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Kaaouachi.jpg" alt="">
+                <!-- Player 2 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">26</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Sven<br>Ulreich</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 35</p>
+                                <p><span>Height:</span> 1.92m</p>
+                                <p><span>Matches:</span> 12</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Abdel Allah amghar.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/El ichaoui.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-number">--</div>
-                <div class="player-image-placeholder"></div>
-                <div class="player-name">Amin<br>Ghanimi</div>
-            </div>
-        </div>
-    </section>
 
-    <section class="position-group">
-        <h2 class="position-title">المدافعين</h2>
-        <div class="player-list">
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Maldini.jpg" alt="">
+                <!-- Player 3 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">40</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Daniel<br>Peretz</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 24</p>
+                                <p><span>Height:</span> 1.90m</p>
+                                <p><span>Matches:</span> 2</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Younes Douib.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Aklidou.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Nafai.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Ialioune.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Touihine.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Yassine bouaali.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Zakaria Martil.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Ahmed zouaq.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="position-group">
-        <h2 class="position-title">الوسط</h2>
-        <div class="player-list">
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Oussama dahr.jpg" alt="">
+                <!-- Player 4 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">48</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Tom<br>Ritzy</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 19</p>
+                                <p><span>Height:</span> 1.88m</p>
+                                <p><span>Matches:</span> 0</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Azeroual.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Zouhir Jbilo.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Hamz Elbaroudi.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Qarqour.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Hammoch.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-number">--</div>
-                <div class="player-image-placeholder"></div>
-                <div class="player-name">Joseph <br> Ndongo Mintong</div>                
-            </div>
-        </div>
-    </section>
 
-    <section class="position-group">
-        <h2 class="position-title">المهاجمين</h2>
-        <div class="player-list">
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Oussama sghiri.jpg" alt="">
-                </div>
             </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Badr mahdoub.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Taha dayf.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Mouatassim.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-image-placeholder">
-                  <img src="USMO IMG/Team/Yassin marzougi.jpg" alt="">
-                </div>
-            </div>
-            <div class="player-card">
-                <div class="player-number">99</div>
-                <div class="player-image-placeholder"></div>
-                <div class="player-name">Ibrahim<br>El Omari</div>                
-            </div>
+        </section>
 
-            
-        </div>
-    </section>
-</div>
+        <!-- Defenders Section -->
+        <section class="position-group">
+            <h2 class="position-title">المدافعين</h2>
+            <div class="player-grid">
+                
+                <!-- Player 1 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">2</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Dayot<br>Upamecano</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 25</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 2 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">3</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Minjae<br>Kim</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 27</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 3 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">4</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Matthijs<br>de Ligt</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 24</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 4 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">19</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Alphonso<br>Davies</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 23</p>
+                                <p><span>Position:</span> LB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 5 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">21</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Hiroki<br>Ito</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 25</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="position-group">
+            <h2 class="position-title">الوسط</h2>
+            <div class="player-grid">
+                
+                <!-- Player 1 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">2</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Dayot<br>Upamecano</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 25</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 2 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">3</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Minjae<br>Kim</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 27</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 3 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">4</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Matthijs<br>de Ligt</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 24</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 4 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">19</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Alphonso<br>Davies</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 23</p>
+                                <p><span>Position:</span> LB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 5 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">21</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Hiroki<br>Ito</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 25</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+         <section class="position-group">
+            <h2 class="position-title">المهاجمين</h2>
+            <div class="player-grid">
+                
+                <!-- Player 1 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">2</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Dayot<br>Upamecano</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 25</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 2 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">3</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Minjae<br>Kim</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 27</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 3 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">4</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Matthijs<br>de Ligt</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 24</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 4 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">19</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Alphonso<br>Davies</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 23</p>
+                                <p><span>Position:</span> LB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 5 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">21</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Hiroki<br>Ito</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 25</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+         <section class="position-group">
+            <h2 class="position-title">الطاقم</h2>
+            <div class="player-grid">
+                
+                <!-- Player 1 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">2</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Dayot<br>Upamecano</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 25</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 2 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">3</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Minjae<br>Kim</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 27</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 3 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">4</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Matthijs<br>de Ligt</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 24</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 4 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">19</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Alphonso<br>Davies</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 23</p>
+                                <p><span>Position:</span> LB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 5 -->
+                <div class="player-card">
+                    <div class="player-card-inner">
+                        <div class="player-card-front">
+                            <span class="player-number">21</span>
+                            <div class="player-image-placeholder"></div>
+                            <div class="player-info">
+                                <span class="player-name">Hiroki<br>Ito</span>
+                            </div>
+                        </div>
+                        <div class="player-card-back">
+                            <div class="player-stats">
+                                <p><span>Age:</span> 25</p>
+                                <p><span>Position:</span> CB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+    </main>
+    
    <footer>
   <div class="players-container">
     
@@ -285,53 +621,7 @@
   </body>
   
 
- <script>
-  
-  const menuToggle = document.getElementById("menu-toggle");
-  const nav = document.getElementById("nav");
+  <script src="header.js"></script>
 
-
-  // ☰ MENU CLICK
-  menuToggle.onclick = (e) => {
-    e.stopPropagation();
-    nav.classList.toggle("active");
-  };
-
-
-  // CLICK OUTSIDE CLOSES EVERYTHING
-  document.onclick = () => {
-    nav.classList.remove("active");
-    langMenu.classList.remove("active");
-  };
-
-
-
-  const closeMenu = document.getElementById("close-menu");
-
-// OPEN
-menuToggle.onclick = (e) => {
-  e.stopPropagation();
-  nav.classList.add("active");
-  langMenu.classList.remove("active");
-};
-
-// CLOSE with X
-closeMenu.onclick = (e) => {
-  e.stopPropagation();
-  nav.classList.remove("active");
-};
-
-
-// CLICK OUTSIDE
-document.onclick = (e) => {
-  if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
-    nav.classList.remove("active");
-  }
-
-  if (!langBtn.contains(e.target)) {
-    langMenu.classList.remove("active");
-  }
-};
-  </script>
 </body>
 </html>

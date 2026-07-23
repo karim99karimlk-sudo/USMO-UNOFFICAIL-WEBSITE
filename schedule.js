@@ -71,35 +71,45 @@ const body = document.getElementById("scheduleBody");
 
 function loadSeason(season){
 
-    body.innerHTML="";
-
+    body.innerHTML = "";
 
     schedules[season].matches.forEach((match,index)=>{
 
-        body.innerHTML+=`
+        // Our score is always inside <strong>
+        const us = Number(match[4].match(/<strong>(\d+)<\/strong>/)[1]);
 
-<tr class="${index%2 ? 'alt-row':''}">
+        // Opponent's score is what's left after removing the <strong> tags
+        const them = Number(
+            match[4]
+                .replace(/<strong>\d+<\/strong>/, "")
+                .replace("-", "")
+        );
 
-<td class="center">${match[0]}</td>
+        let resultClass = "draw";
 
-<td>${match[1]}</td>
+        if (us > them) {
+            resultClass = "win";
+        } else if (us < them) {
+            resultClass = "loss";
+        }
 
-<td>${match[2]}</td>
-
-<td>${match[3]}</td>
-
-<td class="score">${match[4]}</td>
-
-<td>
-<a href="${match[5]}" target="_blank" class="info-btn">
-<i class="fa-solid fa-play"></i>
-</a>
-</td>
-
-</tr>
-
-`;
-
+        body.innerHTML += `
+        <tr class="${index % 2 ? 'alt-row' : ''}">
+            <td>${match[0]}</td>
+            <td>${match[1]}</td>
+            <td>${match[2]}</td>
+            <td>${match[3]}</td>
+            <td>
+                <span class="score ${resultClass}">
+                    ${match[4]}
+                </span>
+            </td>
+            <td>
+                <a href="${match[5]}" target="_blank" class="info-btn">
+                    <i class="fa-solid fa-play"></i>
+                </a>
+            </td>
+        </tr>`;
     });
 
 }
